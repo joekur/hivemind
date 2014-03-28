@@ -1,0 +1,10 @@
+---
+- name: Git | Install git
+  action: apt pkg=git state=latest
+
+- name: Git | Add .gitconfig for each user
+  with_items: users
+  template: src=gitconfig.j2
+            dest=~{{ item.username }}/.gitconfig
+            owner={{ item.username }}
+            group={{ item.username }}
