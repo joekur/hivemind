@@ -2,9 +2,8 @@
 - name: Tmux | Install tmux
   action: apt pkg=tmux state=latest
 
-- name: Tmux | Add .tmux.conf for each user
-  with_items: users
+- name: Tmux | Add tmux.conf
   template: src=tmux.conf.j2
-            dest=~{{ item.username }}/.tmux.conf
-            owner={{ item.username }}
-            group={{ item.username }}
+            dest=/etc/tmux.conf
+            owner=root
+            group=root
