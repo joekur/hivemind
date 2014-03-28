@@ -1,0 +1,7 @@
+---
+
+- name: Users | Create user accounts
+  with_items: users
+  user: name={{ item.username }}
+        groups="{{ item.groups }}"
+        comment="{{ item.description }}"

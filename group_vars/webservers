@@ -1,0 +1,11 @@
+---
+ansible_ssh_user: joekur
+
+users:
+  - username: joekur
+    description: Joe Kurleto
+    groups: sudo
+
+  - username: deploy
+    description: Deploy User
+    groups: sudo
